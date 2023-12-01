@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from "../components/layout/button";
 
 function Login() {
     const navigate = useNavigate();
@@ -12,6 +13,7 @@ function Login() {
             <button onClick={handleClick}>
                 Connexion
             </button>
+            <Button/>
         </>
     )
 }

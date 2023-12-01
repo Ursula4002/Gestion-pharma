@@ -10,6 +10,11 @@ import About from './pages/about'
 import ProductsList from './pages/product-list'
 import Layout from './components/layout/layout'
 import Products from './pages/product'
+import DashboardLayout from './components/layout/dashboard-layout'
+import AllProducts from './components/layout/dashboard-nav-content/all-products'
+import CreateProduct from './components/layout/dashboard-nav-content/create-product'
+import UpdateProduct from './components/layout/dashboard-nav-content/update-product'
+import DeleteProduct from './components/layout/dashboard-nav-content/delete-product'
 
 const router = createBrowserRouter([
   {
@@ -44,10 +49,36 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/all-products",
+        element: <AllProducts />,
+      },
+
+      {
+        path: "/create-product",
+        element: <CreateProduct />,
+      },
+
+      {
+        path: "/update-product",
+        element: <UpdateProduct />,
+      },
+
+      {
+        path: "/delete-product",
+        element: <DeleteProduct />,
+      },
+
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router = {router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
