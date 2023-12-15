@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function Button() {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('./dashboard-layout');
+        navigate('/all-products');
     }
 
     return (
